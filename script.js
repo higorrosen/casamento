@@ -24,3 +24,21 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 1000); // agora atualiza a cada segundo
+
+const events = document.querySelectorAll('.timeline-event');
+
+function showEvents() {
+  const triggerBottom = window.innerHeight * 0.8;
+
+  events.forEach(event => {
+    const eventTop = event.getBoundingClientRect().top;
+    if(eventTop < triggerBottom) {
+      event.classList.add('active');
+    } else {
+      event.classList.remove('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', showEvents);
+window.addEventListener('load', showEvents);
