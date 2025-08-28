@@ -42,3 +42,40 @@ function showEvents() {
 
 window.addEventListener('scroll', showEvents);
 window.addEventListener('load', showEvents);
+
+const sections = document.querySelectorAll('.section-ilustracao, .local, .cronograma, .lista-presentes');
+
+const sectionObserver = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show'); // adiciona classe para animação
+      observer.unobserve(entry.target); // opcional: só anima uma vez
+    }
+  });
+}, {
+  threshold: 0.2 // 20% da seção precisa estar visível para animar
+});
+
+// Observa cada seção
+sections.forEach(section => sectionObserver.observe(section));
+
+const animElements = document.querySelectorAll(
+  ".section-ilustracao, .local, .cronograma, .lista-presentes, .timeline-event .content-actual"
+);
+
+const observer = new IntersectionObserver((entries, obs) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const delay = entry.target.classList.contains("content-actual") ? 1000 : 0;
+      setTimeout(() => {
+        entry.target.classList.add(entry.target.classList.contains("content-actual") ? "atualiza" : "show");
+      }, delay);
+
+      obs.unobserve(entry.target); // anima só uma vez
+    }
+  });
+}, {
+  threshold: 0.2
+});
+
+animElements.forEach(el => observer.observe(el));
