@@ -71,28 +71,24 @@ body {
   background-color: #fdf8ee;
   margin: 0;
   padding: 0;
+  background-image: url("images/beijo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
 }
 
 .image-side {
   flex: 1;
 }
 
-.desenho {
-  width:40%;
-  height: auto;
-  object-fit: cover;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
 
 .countdown-side {
   padding: 0px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
   gap: 0px;
-  margin-right: 70px;
+  margin-left: 1000px;
+  justify-content: flex-start;
 }
 
 .count-item {
