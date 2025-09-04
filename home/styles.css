@@ -516,8 +516,8 @@ body {
 }
 
 .lista-botao {
-  text-decoration: none;
   display: block;
+  text-decoration: none;
   text-align: center;
   flex: 0 0 250px;           
   font-family: 'Marcellus', serif;
