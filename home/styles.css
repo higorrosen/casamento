@@ -523,6 +523,9 @@ body {
   background-color: #ffffff;
   color: #000000;
   border: 0;
+  text-decoration: none;
+  display: block;
+  text-align: center;
   border-radius: 10px;
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
