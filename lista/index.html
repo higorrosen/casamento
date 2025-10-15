@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Presença - Ana Caroline e Higor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet">
+    <style>
+
+        @font-face {
+        font-family: 'Joliet';
+        src: url('../fontes/Joliet-Regular.eot');
+            src: local('../Joliet Regular'), local('../Joliet-Regular'),
+        url('../fontes/Joliet-Regular.eot?#iefix') format('embedded-opentype'),
+        url('../fontes/Joliet-Regular.woff2') format('woff2'),
+        url('../fontes/Joliet-Regular.woff') format('woff'),
+        url('../fontes/Joliet-Regular.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Playfair Display', serif;
+            background-color: #fdfaf6;
+            color: #000000;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            border: 1px solid #e0dcd7;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .header {
+            background: none;
+            color: #000000;
+            padding: 50px 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: 'Marcellus', serif;
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 400;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.8;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .loading-section .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #8c7b73;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-section h3 {
+            color: #000000;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            font-family: 'Playfair Display', serif;
+            border: 1px solid #e0dcd7;
+            border-radius: 0;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .search-input:focus {
+            border-color: #000000;
+        }
+
+        .search-results {
+            max-height: 300px;
+            overflow-y: auto;
+            border: 1px solid #e0dcd7;
+            border-top: none;
+            margin-top: 0;
+            display: none;
+        }
+
+        .search-item {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .search-item:hover {
+            background-color: #f9f7f5;
+        }
+
+        .search-item.present {
+            background-color: #f0f5f0;
+            color: #5f7a5f;
+            text-decoration: line-through;
+        }
+
+        .confirmation-section {
+            display: none;
+            background:  #fdfaf6;
+            border: 1px solid #000000;
+            padding: 30px;
+            margin-top: 20px;
+        }
+
+        .confirmation-section h3 {
+            font-family: 'Marcellus', serif;
+            color: #000000;
+            margin-bottom: 20px;
+            font-size: 1.3em;
+            font-weight: 400;
+        }
+
+        .family-checkbox {
+            margin-right: 15px; /* Ajuste este valor como preferir (ex: 10px, 1em) */
+        }
+
+        .email-input-group {
+            margin: 25px 0;
+        }
+
+        .email-input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1em;
+            color: #000000;
+        }
+
+        .email-input-group input[type="email"] {
+            width: 100%;
+            padding: 12px 15px;
+            font-size: 1em;
+            font-family: 'Playfair Display', serif;
+            border: 1px solid #000000;
+            border-radius: 0;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .email-input-group input[type="email"]:focus {
+            border-color: #000000;
+        }
+
+        .email-input-group small {
+            display: block;
+            margin-top: 5px;
+            color: #000000;
+            font-size: 0.9em;
+        }
+
+        .family-member-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #5e5e5e;
+        }
+
+        .family-name.present {
+            color: #000000;
+            text-decoration: line-through;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px 30px;
+            font-size: 1em;
+            font-family: 'Marcellus', serif;
+            border: 1px solid #000000;
+            border-radius: 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn-primary {
+            background: #000000;
+            color: rgb(255, 255, 255);
+        }
+
+        .btn-primary:hover {
+            background: #313131;
+            border-color: #73655f;
+        }
+
+        .btn-primary:disabled {
+            background: #ccc;
+            border-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #8c7b73;
+        }
+
+        .btn-secondary:hover {
+            background: #fdfaf6;
+        }
+
+        .error-section,
+        .success-message {
+            text-align: center;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid;
+        }
+
+        .error-section {
+            background: #f8e5e5;
+            color: #721c24;
+            border-color: #f5c6cb;
+            display: none;
+        }
+
+        .success-message {
+            background: #ffffff;
+            color: #000000;
+            border-color: #000000;
+            display: none;
+        }
+
+        .admin-link-container {
+            text-align: center;
+            margin-top: 30px;
+            padding-bottom: 20px;
+        }
+
+        .admin-link {
+            font-family: 'Marcellus', serif;
+            text-decoration: none;
+            color: #000000;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s ease;
+        }
+
+        .admin-link:hover {
+            color: #8c7b73;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Lista de Presença</h1>
+            <p>Confirme sua presença e de seus acompanhantes</p>
+        </div>
+
+        <div class="main-content">
+            <div class="loading-section" id="loadingSection" style="text-align: center; padding: 50px;">
+                <div class="spinner"></div>
+                <h3 style="margin-bottom: 10px;">Carregando Lista de Convidados...</h3>
+                <p>Aguarde um momento</p>
+            </div>
+
+            <div class="search-section" id="searchSection" style="display: none;">
+                <div class="search-box">
+                    <input type="text" class="search-input" placeholder="Digite seu nome para pesquisar..." id="searchInput">
+                    <div class="search-results" id="searchResults"></div>
+                </div>
+            </div>
+
+            <div class="confirmation-section" id="confirmationSection">
+                <h3>Confirme sua presença</h3>
+
+                <div class="email-input-group">
+                    <label for="emailInput">E-mail para confirmação *</label>
+                    <input type="email" id="emailInput" placeholder="seu@email.com" required>
+                    <small>Enviaremos um e-mail de confirmação para você</small>
+                </div>
+
+                <div id="familyMembersSection" style="display: none;">
+                    <h3 style="margin-top: 30px;">Gostaria de confirmar a presença de acompanhantes?</h3>
+                    <div id="familyMembersList"></div>
+                </div>
+
+                <div class="buttons">
+                    <button class="btn btn-primary" onclick="confirmAttendance()" id="confirmBtn">Confirmar Presença</button>
+                    <button class="btn btn-secondary" onclick="cancelSelection()">Cancelar</button>
+                </div>
+            </div>
+
+            <div class="error-section" id="errorSection">
+                <h3>Erro ao Carregar Lista</h3>
+                <p id="errorMessage">Não foi possível carregar a lista de convidados.</p>
+                <button class="btn btn-primary" onclick="loadAttendanceList()" style="margin-top: 15px;">
+                    Tentar Novamente
+                </button>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                Presença confirmada com sucesso!
+            </div>
+        </div>
+    </div>
+    <div class="admin-link-container">
+        <a href="admin.php" target="_blank" class="admin-link">Painel do Administrador</a>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script>
+        let attendanceData = {};
+        let families = {};
+        let selectedUser = null;
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const confirmationSection = document.getElementById('confirmationSection');
+        const familyMembersSection = document.getElementById('familyMembersSection');
+        const familyMembersList = document.getElementById('familyMembersList');
+        const successMessage = document.getElementById('successMessage');
+        const loadingSection = document.getElementById('loadingSection');
+        const errorSection = document.getElementById('errorSection');
+        const searchSection = document.getElementById('searchSection');
+        const emailInput = document.getElementById('emailInput');
+        const confirmBtn = document.getElementById('confirmBtn');
+
+        searchInput.addEventListener('input', handleSearch);
+        searchInput.addEventListener('focus', handleSearch);
+        emailInput.addEventListener('input', validateEmail);
+
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.search-box')) {
+                searchResults.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAttendanceList();
+        });
+
+        function loadAttendanceList() {
+            loadingSection.style.display = 'block';
+            errorSection.style.display = 'none';
+            searchSection.style.display = 'none';
+            fetch('/lista/lista_convidados.csv')
+                .then(response => {
+                    if (!response.ok) throw new Error('Arquivo CSV não encontrado');
+                    return response.text();
+                })
+                .then(csvContent => {
+                    Papa.parse(csvContent, {
+                        header: true,
+                        skipEmptyLines: true,
+                        complete: function(results) {
+                            try {
+                                processCSVData(results.data);
+                                showMainInterface();
+                            } catch (error) {
+                                showError('Erro ao processar os dados: ' + error.message);
+                            }
+                        }
+                    });
+                })
+                .catch(error => showError('Erro ao carregar a lista: ' + error.message));
+        }
+
+        function processCSVData(csvData) {
+            attendanceData = {};
+            families = {};
+            let personId = 1;
+            let familyId = 1;
+            csvData.forEach(row => {
+                const cleanRow = {};
+                Object.keys(row).forEach(key => {
+                    const cleanKey = key.trim().toLowerCase();
+                    cleanRow[cleanKey] = row[key];
+                });
+                const nameField = Object.keys(cleanRow).find(key => ['nome', 'name', 'usuario', 'user'].includes(key));
+                if (!nameField || !cleanRow[nameField]) return;
+                const mainName = cleanRow[nameField].trim();
+                if (!mainName) return;
+                const familyField = Object.keys(cleanRow).find(key => ['companheiros', 'companions', 'acompanhantes', 'familia', 'family', 'membros'].includes(key));
+                let familyMembers = [mainName];
+                if (familyField && cleanRow[familyField]) {
+                    const otherMembers = cleanRow[familyField].split(';').map(c => c.trim()).filter(c => c.length > 0);
+                    familyMembers = familyMembers.concat(otherMembers);
+                }
+                const currentFamilyId = `family_${familyId++}`;
+                families[currentFamilyId] = familyMembers;
+                familyMembers.forEach(memberName => {
+                    if (!attendanceData[memberName]) {
+                        attendanceData[memberName] = {
+                            id: personId++,
+                            name: memberName,
+                            present: false,
+                            familyId: currentFamilyId
+                        };
+                    }
+                });
+            });
+            if (Object.keys(attendanceData).length === 0) throw new Error('Nenhum dado válido encontrado no arquivo CSV');
+        }
+
+        function validateEmail() {
+            const email = emailInput.value.trim();
+            const isValid = email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+            confirmBtn.disabled = !isValid;
+        }
+
+        function confirmAttendance() {
+            if (!selectedUser) return;
+
+            const email = emailInput.value.trim();
+            if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                alert('Por favor, insira um e-mail válido.');
+                emailInput.focus();
+                return;
+            }
+
+            const confirmedNames = [selectedUser.name];
+            const familyMembers = families[selectedUser.familyId].filter(name => name !== selectedUser.name);
+            familyMembers.forEach(memberName => {
+                const checkbox = document.getElementById(memberName);
+                if (checkbox && checkbox.checked && !checkbox.disabled) {
+                    confirmedNames.push(memberName);
+                }
+            });
+
+            confirmBtn.disabled = true;
+            confirmBtn.textContent = 'Enviando...';
+
+            fetch('/lista/salvar_presenca.php', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        names: confirmedNames,
+                        email: email
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        successMessage.style.display = 'block';
+                        setTimeout(() => {
+                            successMessage.style.display = 'none';
+                        }, 5000);
+                        confirmedNames.forEach(name => {
+                            if (attendanceData[name]) attendanceData[name].present = true;
+                        });
+                    } else {
+                        alert('Ocorreu um erro ao salvar sua confirmação. Tente novamente.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro de conexão:', error);
+                    alert('Ocorreu um erro de conexão. Tente novamente.');
+                })
+                .finally(() => {
+                    confirmBtn.disabled = false;
+                    confirmBtn.textContent = 'Confirmar Presença';
+                    cancelSelection();
+                });
+        }
+
+        function showError(message) {
+            loadingSection.style.display = 'none';
+            document.getElementById('errorMessage').textContent = message;
+            errorSection.style.display = 'block';
+        }
+
+        function showMainInterface() {
+            loadingSection.style.display = 'none';
+            errorSection.style.display = 'none';
+            searchSection.style.display = 'block';
+        }
+
+        function handleSearch() {
+            const query = searchInput.value.toLowerCase().trim();
+            if (query.length === 0) {
+                searchResults.style.display = 'none';
+                return;
+            }
+            const matches = Object.values(attendanceData).filter(person =>
+                person.name.toLowerCase().includes(query) && !person.present
+            );
+            displaySearchResults(matches);
+        }
+
+        function displaySearchResults(matches) {
+            if (matches.length === 0) {
+                searchResults.innerHTML = '<div class="search-item">Nenhum resultado encontrado</div>';
+                searchResults.style.display = 'block';
+                return;
+            }
+            searchResults.innerHTML = matches.map(person =>
+                `<div class="search-item" onclick="selectUser('${person.name}')">${person.name}</div>`
+            ).join('');
+            searchResults.style.display = 'block';
+        }
+
+        function selectUser(userName) {
+            selectedUser = attendanceData[userName];
+            searchInput.value = userName;
+            searchResults.style.display = 'none';
+            emailInput.value = '';
+            confirmBtn.disabled = true;
+
+            const familyMembers = families[selectedUser.familyId].filter(name => name !== userName);
+            if (familyMembers.length > 0) {
+                showFamilyMembersSection(familyMembers);
+            } else {
+                familyMembersSection.style.display = 'none';
+            }
+            confirmationSection.style.display = 'block';
+            emailInput.focus();
+        }
+
+        function showFamilyMembersSection(familyMembers) {
+            familyMembersList.innerHTML = familyMembers.map(memberName => {
+                const member = attendanceData[memberName];
+                const isPresent = member && member.present;
+                return ` 
+                <div class="family-member-item"> 
+                    <input type="checkbox" class="family-checkbox" id="${memberName}" ${isPresent ? 'disabled checked' : ''}> 
+                    <label class="family-name ${isPresent ? 'present' : ''}" for="${memberName}"> 
+                        ${memberName} ${isPresent ? '(já presente)' : ''} 
+                    </label> 
+                </div> 
+                `;
+            }).join('');
+            familyMembersSection.style.display = 'block';
+        }
+
+        function cancelSelection() {
+            selectedUser = null;
+            searchInput.value = '';
+            emailInput.value = '';
+            confirmBtn.disabled = true;
+            confirmationSection.style.display = 'none';
+            searchResults.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

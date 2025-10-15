@@ -1,0 +1,362 @@
+[
+    {
+        "id": 1,
+        "name": "Air Fryer",
+        "image": "https:\/\/m.media-amazon.com\/images\/I\/51wwp25UBVL._UF894,1000_QL80_.jpg",
+        "description": "Vai nos ajudar a preparar refeições práticas e saudáveis, com menos óleo e muito sabor.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=air+fryer",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/air-fryer"
+        }
+    },
+    {
+        "id": 2,
+        "name": "Liquidificador",
+        "image": "https:\/\/m.media-amazon.com\/images\/I\/51N3Xi4JJML._UF894,1000_QL80_.jpg",
+        "description": "Perfeito para fazer os sucos e molhos da Carol.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=liquidificador",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/liquidificador"
+        }
+    },
+    {
+        "id": 3,
+        "name": "Sanduicheira",
+        "image": "https:\/\/gazin-images.gazin.com.br\/rpfwKyI7tHUcHkGfUrDsDLvFepc=\/1920x\/filters:format(webp):quality(75)\/https:\/\/gazin-marketplace.s3.amazonaws.com\/midias\/imagens\/2022\/04\/grill-sanduicheira-britania-press-antiaderente-chapa-ondulada-e-lisa-850w-082204572553.jpg",
+        "description": "Ideal para nossos lanches rápidos e tardes preguiçosas juntos.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=sanduicheira+grill",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/sanduicheira"
+        }
+    },
+    {
+        "id": 4,
+        "name": "Cafeteira",
+        "image": "https:\/\/jcsbrasil.vteximg.com.br\/arquivos\/ids\/215788-1000-1000\/BVSTEM7200-0.jpg?v=638235754368870000",
+        "description": "Porque um bom café faz parte da nossa rotina e dos nossos momentos de aconchego.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=cafeteira+eletrica",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/cafeteira-eletrica"
+        }
+    },
+    {
+        "id": 5,
+        "name": "Batedeira",
+        "image": "https:\/\/jcsbrasil.vteximg.com.br\/arquivos\/ids\/208955-1000-1000\/1---OBAT640.3.jpg?v=638132085204570000",
+        "description": "Para adoçar nossos dias com bolos, pães e sobremesas deliciosos preparados pelas lindas mãos da noiva.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=batedeira+planetaria",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/batedeira"
+        }
+    },
+    {
+        "id": 6,
+        "name": "Mixer",
+        "image": "https:\/\/jcsbrasil.vteximg.com.br\/arquivos\/ids\/227395-1000-1000\/Sem-Titulo-2.jpg?v=638737526556530000",
+        "description": "Nos ajudará a preparar sopas, molhos e receitas com praticidade.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=mixer+eletrico",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/mixer-eletrico"
+        }
+    },
+    {
+        "id": 7,
+        "name": "Moedor de Café",
+        "image": "https:\/\/m.media-amazon.com\/images\/I\/51B8iM+CyFL._UF894,1000_QL80_.jpg",
+        "description": "Nada melhor que sentir o cheirinho do café fresco moído na hora.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=moedor+cafe+eletrico",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/moedor-de-cafe"
+        }
+    },
+    {
+        "id": 8,
+        "name": "Jogo de Panelas de Indução Antiaderentes",
+        "image": "https:\/\/blog.havan.com.br\/wp-content\/uploads\/2023\/08\/Destaque-Post-Thumbnail-2-Panela-para-fogao-de-inducao.jpg",
+        "description": "Serão nossas companheiras para cozinhar juntos e preparar jantares especiais.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=jogo+panelas+inducao+antiaderente",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/jogo-panelas-inducao"
+        }
+    },
+    {
+        "id": 9,
+        "name": "Conjunto de Formas",
+        "image": "https:\/\/m.media-amazon.com\/images\/I\/51DcgYr-5UL._UF894,1000_QL80_.jpg",
+        "description": "Para assar os bolos, tortas e cookies da Carol, que vão encher nossa casa de cheiro gostoso.",
+        "quantity": 2,
+        "maxQuantity": 2,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=conjunto+formas+bolo+antiaderente",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/conjunto-formas-bolo"
+        }
+    },
+    {
+        "id": 10,
+        "name": "Jogo de Copos",
+        "image": "https:\/\/precolandia.vtexassets.com\/arquivos\/ids\/247572-800-450?v=638551794853970000&width=800&height=450&aspect=true",
+        "description": "Copos que vão acompanhar desde o café da manhã até os encontros com amigos.",
+        "quantity": 4,
+        "maxQuantity": 4,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=jogo+copos+vidro",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/jogo-copos-vidro"
+        }
+    },
+    {
+        "id": 11,
+        "name": "Jogo de Taças",
+        "image": "https:\/\/casafreitas2.vteximg.com.br\/arquivos\/ids\/271175-1000-1000\/6935003100001-jogo-tacas-diamond-300ml-vidro-transparente-dcasa-2.jpg?v=638779151744200000",
+        "description": "Para brindar nossas conquistas e momentos especiais.",
+        "quantity": 2,
+        "maxQuantity": 2,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=jogo+tacas+vinho+cristal",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/jogo-tacas-vinho"
+        }
+    },
+    {
+        "id": 12,
+        "name": "Jogo de Xícaras",
+        "image": "https:\/\/casaferrari.cdn.magazord.com.br\/img\/2025\/04\/produto\/57675\/ryo-maresia-5.png?ims=fit-in\/600x600\/filters:fill(white)",
+        "description": "Xícaras para compartilhar cafés da manhã demorados e conversas longas.",
+        "quantity": 2,
+        "maxQuantity": 2,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=jogo+xicaras+cafe+porcelana",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/jogo-xicaras-cafe"
+        }
+    },
+    {
+        "id": 13,
+        "name": "Jogo de Pratos",
+        "image": "https:\/\/openbox.vtexassets.com\/arquivos\/ids\/182687-976-976\/roma-branco-ambientada.jpg?v=637758843412500000",
+        "description": "Estarão presentes em nossas refeições diárias e jantares de família.",
+        "quantity": 3,
+        "maxQuantity": 3,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=jogo+pratos+jantar+porcelana",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/jogo-pratos-jantar"
+        }
+    },
+    {
+        "id": 14,
+        "name": "Jogo de Talheres",
+        "image": "https:\/\/http2.mlstatic.com\/D_NQ_NP_635223-MLA84841207829_052025-O.webp",
+        "description": "Talheres que vão acompanhar todas as nossas refeições juntos.",
+        "quantity": 2,
+        "maxQuantity": 2,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=jogo+talheres+inox+24+pecas",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/jogo-talheres-inox"
+        }
+    },
+    {
+        "id": 15,
+        "name": "Filtro de Água",
+        "image": "https:\/\/m.media-amazon.com\/images\/I\/51lj014yH6L._UF894,1000_QL80_.jpg",
+        "description": "Para garantir água limpa e saudável.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=filtro+agua+coluna",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/filtro-agua"
+        }
+    },
+    {
+        "id": 16,
+        "name": "Conjunto de lençóis",
+        "image": "https:\/\/pontaodasfabricas.cdn.magazord.com.br\/img\/2024\/05\/produto\/163\/jogo-lencol-jolitex-toque-de-seda-liso-4.jpeg?ims=600x600",
+        "description": "Para noites confortáveis e cheias de aconchego ao nosso lado.",
+        "quantity": 5,
+        "maxQuantity": 5,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=jogo+lencol+casal+algodao",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/jogo-lencol-casal"
+        }
+    },
+    {
+        "id": 17,
+        "name": "Edredom",
+        "image": "https:\/\/images.tcdn.com.br\/img\/img_prod\/842194\/edredom_dupla_face_percal_400_fios_extra_macio_luxo_909_variacao_9303_1_b7a14a0b4371a6fb9e9a8816258e2781.png",
+        "description": "Vai nos aquecer nas noites frias de Curitiba e deixar o quarto ainda mais acolhedor.",
+        "quantity": 3,
+        "maxQuantity": 3,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=edredom+casal+dupla+face",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/edredom-casal"
+        }
+    },
+    {
+        "id": 18,
+        "name": "Jogo de toalhas de banho",
+        "image": "https:\/\/centraltoalhas.cdn.magazord.com.br\/img\/2022\/06\/produto\/4373\/banho-hotel-prata.jpg?ims=800x800",
+        "description": "Toalhas para o noivo sempre estender depois de usar.",
+        "quantity": 5,
+        "maxQuantity": 5,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=jogo+toalhas+banho+algodao",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/jogo-toalhas-banho"
+        }
+    },
+    {
+        "id": 19,
+        "name": "Tapete",
+        "image": "https:\/\/a-static.mlcdn.com.br\/800x560\/tapete-de-sala-apartamento-300x200-pelo-macio-felpudo-grande-copa-decoracao-mesa-de-jantar-barato-soft-dream\/megaatual\/t300x200mm\/042ec695ff4c15398542af26c9b8a7d5.jpeg",
+        "description": "Vai trazer conforto e deixar nossa sala mais aconchegante.",
+        "quantity": 2,
+        "maxQuantity": 2,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=tapete+sala+200x300",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/tapete-sala-grande"
+        }
+    },
+    {
+        "id": 20,
+        "name": "Cortinas",
+        "image": "https:\/\/www.galaxcommerce.com.br\/sistema\/upload\/297\/produtos\/persiana-vertical-natural---medida-180-x-180---com-bando_2018-03-26_16-39-18_7.jpg",
+        "description": "Para dar privacidade e deixar os ambientes ainda mais acolhedores.",
+        "quantity": 3,
+        "maxQuantity": 3,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=cortina+blackout+sala",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/cortina-blackout"
+        }
+    },
+    {
+        "id": 21,
+        "name": "Itens de Banheiro",
+        "image": "https:\/\/acdn-us.mitiendanube.com\/stores\/001\/995\/484\/products\/kit-harmony-cinza-2a972ca7185acf3e2317417964415424-1024-1024.png",
+        "description": "Pequenos detalhes que vão deixar o banheiro mais bonito e prático.",
+        "quantity": 2,
+        "maxQuantity": 2,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=kit+banheiro+saboneteira+porta+escova",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/kit-banheiro"
+        }
+    },
+    {
+        "id": 22,
+        "name": "Climatizador",
+        "image": "https:\/\/www.oster.com.br\/arquivos\/OCLI100-02M.jpg?v=637695704778630000",
+        "description": "Vai refrescar nossos dias quentes.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=climatizador+evaporativo",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/climatizador"
+        }
+    },
+    {
+        "id": 23,
+        "name": "Aquecedor",
+        "image": "https:\/\/lojaskubbo.vteximg.com.br\/arquivos\/ids\/158523-1000-1000\/imaged9.jpg?v=637645474582670000",
+        "description": "Curitiba, né?",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=aquecedor+eletrico+ambiente",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/aquecedor-eletrico"
+        }
+    },
+    {
+        "id": 24,
+        "name": "Toalheiro Térmico",
+        "image": "https:\/\/http2.mlstatic.com\/D_NQ_NP_922189-MLB87918689935_072025-O-toalheiro-termico-aluminio-de-temperatura-timer-digital.webp",
+        "description": "Um mimo que vai deixar as toalhas sempre quentinhas.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=toalheiro+termico+eletrico",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/toalheiro-termico"
+        }
+    },
+    {
+        "id": 25,
+        "name": "Smart Speaker",
+        "image": "https:\/\/images.kabum.com.br\/produtos\/fotos\/sync_mirakl\/502523\/xlarge\/Echo-Pop-Amazon-Com-Alexa-Bluetooth-Wi-fi-Smart-Speaker-Preto-C2h4r9-_1753471792.webp",
+        "description": "Além da música, vai nos ajudar com automação e tornar nossa rotina mais prática.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=echo+dot+alexa",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/smart-speaker-alexa"
+        }
+    },
+    {
+        "id": 26,
+        "name": "Interruptores Inteligentes",
+        "image": "https:\/\/intelbras.vtexassets.com\/arquivos\/ids\/168302-800-auto?v=638180311716530000&width=800&height=auto&aspect=true",
+        "description": "Para deixar nossa casa mais moderna e automatizada.",
+        "quantity": 3,
+        "maxQuantity": 3,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=interruptor+inteligente+wifi",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/interruptor-inteligente"
+        }
+    },
+    {
+        "id": 27,
+        "name": "Aspirador de pó",
+        "image": "https:\/\/freitasvarejo.vteximg.com.br\/arquivos\/ids\/187115-1000-1000\/75113073001_4.jpg?v=638439706770970000",
+        "description": "Vai facilitar muito a limpeza da casa no dia a dia.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=aspirador+po+vertical",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/aspirador-de-po"
+        }
+    },
+    {
+        "id": 28,
+        "name": "Ferro Elétrico",
+        "image": "https:\/\/www.havan.com.br\/media\/catalog\/product\/cache\/73a52df140c4d19dbec2b6c485ea6a50\/f\/e\/ferro-de-passar-a-vapor-e-a-seco-electrolux-efficient-esi11_653582_1.webp",
+        "description": "Para manter nossas roupas bem cuidadas e prontas para qualquer ocasião.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=ferro+passar+roupa+vapor",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/ferro-de-passar"
+        }
+    },
+    {
+        "id": 29,
+        "name": "Caixa de Ferramentas",
+        "image": "https:\/\/www.dutramaquinas.com.br\/shared\/img\/produto\/alta\/432189_jogo_de_ferramentas_106_pecas_com_maleta_max.webp",
+        "description": "Essencial para o noivo montar, consertar e cuidar da nossa casa.",
+        "quantity": 1,
+        "maxQuantity": 1,
+        "links": {
+            "amazon": "https:\/\/www.amazon.com.br\/s?k=caixa+ferramentas+completa",
+            "mercadoLivre": "https:\/\/lista.mercadolivre.com.br\/caixa-ferramentas"
+        }
+    },
+    {
+        "id": 30,
+        "name": "Contribuir em Dinheiro",
+        "image": "https:\/\/fly.metroimg.com\/upload\/q_85,w_700\/https:\/\/uploads.metroimg.com\/wp-content\/uploads\/2021\/05\/20131637\/Dinheiro-4.jpg",
+        "description": "Uma forma flexível de nos ajudar a realizar sonhos e projetos futuros.",
+        "quantity": 200,
+        "maxQuantity": 200,
+        "links": {
+            "amazon": null,
+            "mercadoLivre": null
+        }
+    }
+]

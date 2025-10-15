@@ -1,0 +1,541 @@
+@font-face {
+    font-family: 'Joliet';
+    src: url('fontes/Joliet-Regular.eot');
+    src: local('Joliet Regular'), local('../Joliet-Regular'),
+        url('fontes/Joliet-Regular.eot?#iefix') format('embedded-opentype'),
+        url('fontes/Joliet-Regular.woff2') format('woff2'),
+        url('fontes/Joliet-Regular.woff') format('woff'),
+        url('fontes/Joliet-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+  font-family: 'TheSeasons';
+  src: url('fontes/the-seasons-regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; /* ajuda na performance */
+}
+
+/* Tela de introdução cobrindo tudo */
+#intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  overflow: hidden;
+}
+
+/* Linha na borda inferior do intro-top */
+.intro-top::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* exatamente na borda inferior */
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #b3ada2, #000);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 5s forwards;
+}
+
+/* Linha na borda superior do intro-bottom */
+.intro-bottom::after {
+  content: '';
+  position: absolute;
+  top: 0; /* exatamente na borda superior */
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, #b3ada2, #000);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: drawLine 5s forwards;
+}
+
+/* Animação da linha */
+@keyframes drawLine {
+  to {
+    transform: scaleX(1);
+  }
+}
+
+
+/* Metade superior */
+.intro-top, .intro-bottom {
+  position: absolute;
+  width: 100%;
+  height: 50%;
+  background-color: #fdf8ee; /* mesma cor do fundo */
+  left: 0;
+  transition: transform 1.2s ease-in-out;
+}
+
+.intro-top {
+  top: 0;
+  background-color: #fdf8ee;
+  display: flex;                /* ativa flexbox */
+  justify-content: center;      /* centraliza na horizontal */
+  align-items: center;          /* centraliza na vertical */
+  text-align: center; 
+  font-family:'Joliet', serif;
+}
+
+.intro-top p {
+  color: rgb(0, 0, 0);
+  font-size: 8rem;
+  font-family:'Joliet', serif;
+}
+
+.intro-bottom {
+  bottom: 0;
+  background-color: #fdf8ee;
+}
+
+/* Botão central */
+#enter-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Marcellus', serif;
+  font-size: 2.5rem;
+  padding: 20px 40px;
+  border: 0;
+  border-color:  linear-gradient(90deg,(0, 0, 0),#b3ada2);
+  background-color: #ffffff;
+  color: #000000;
+  border-radius: 10px;
+  box-shadow: 6px 4px 10px 2px;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#enter-button:hover {
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: #333;
+  color: #b3ada2;
+}
+
+/* Quando ativar a animação */
+#intro.animate .intro-top {
+  transform: translateY(-100%);
+}
+
+#intro.animate .intro-bottom {
+  transform: translateY(100%);
+}
+
+#intro.animate #enter-button {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+/* Some completamente após a animação */
+#intro.hidden {
+  display: none;
+}
+
+
+.section-ilustracao,
+.local,
+.cronograma,
+.lista-presentes {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+/* quando entram na tela (igual ao .timeline-event.active) */
+.section-ilustracao.active,
+.local.active,
+.cronograma.active,
+.lista-presentes.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fdf8ee;
+  color: #1a1a1a;
+  font-family: 'Marcellus', serif;
+}
+
+.container {
+  text-align: center;
+  height: 100%;              /* ocupa 100% da altura da tela */
+  width: 100hh;
+  margin: 0;
+}
+
+.title {
+  font-family: 'Joliet', serif;
+  font-size: 12rem;
+  font-weight: 400;
+  margin-bottom: 100px;
+}
+
+.image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.photo {
+  max-width: 100%;
+  width: 600px;
+  height: auto;
+}
+
+.footer {
+  margin-top: 150px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.2rem;
+  padding: 0 200px;
+  margin-bottom: 50px;
+}
+
+.left, .right {
+  color: #1a1a1a;
+}
+
+
+.section-ilustracao {
+  display: flex;
+  align-items: center;
+  background-color: #fdf8ee;
+  margin: 0;
+  padding: 0;
+  background-image: url("images/beijo.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+}
+
+.image-side {
+  flex: 1;
+}
+
+
+.countdown-side {
+  padding: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+  margin-left: 1000px;
+  justify-content: flex-start;
+}
+
+.count-item {
+  font-family: "Libertinus Serif Display", system-ui;
+  font-size: 10rem;
+  color: #1a1a1a;
+  transition: transform 0.3s;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Zig-zag vertical */
+.count-item:nth-child(odd) {
+  transform: translateX(-30px); /* sobe 10px */
+}
+
+.count-item:nth-child(even) {
+  transform: translateX(30px); /* desce 10px */
+}
+
+.count-item small {
+  display: block;
+  font-size: 2rem;
+  color: #555;
+  text-transform: lowercase;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.local {
+  background-color: #fdf8ee;
+  padding: 100px 0;
+}
+
+.local-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.local-header h2 {
+  font-size: 10.5rem;
+  font-family: 'Joliet', serif;
+  font-weight: 400;
+  margin: 0 100px 30px 100px;
+}
+
+.local-header img {
+  width: 30px; /* ajuste conforme necessário */
+  height: auto;
+}
+
+.local-gallery{
+  display: flex;
+  gap: 50px;
+  justify-content: center;
+}
+
+.local-gallery a {
+  display: block;
+  width: 30%;
+  transition: transform 0.7s ease;
+}
+
+.local-gallery img {
+  width: 100%;
+  object-fit: cover;
+  height: 834px;
+  filter: brightness(0.76) contrast(1) saturate(0);
+  transition: transform 0.3s ease, filter 0.3s ease;
+  margin-bottom: 100px;
+  transition: transform 0.5s ease;
+}
+
+/* Aumenta suavemente quando passa o mouse */
+.local-gallery a:hover img {
+  transform: scale(1.1);
+  filter: brightness(1) contrast(1) saturate(1); /* volta à cor normal */
+}
+
+
+.mapa iframe {
+  display: block;       /* necessário para que margin auto funcione */
+  margin: 0 auto;       /* centraliza horizontalmente */
+  width: 90%;
+  height: 380px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  filter: brightness(0.76) contrast(1) saturate(-0);
+  transition: transform 0.5s ease;
+}
+
+.mapa iframe:hover {
+  transform: scale(1.05);
+  filter: brightness(1) contrast(1) saturate(1); /* volta à cor normal */
+}
+
+.cronograma-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.cronograma-header h2 {
+  font-size: 10.5rem;
+  font-family: 'Joliet', serif;
+  font-weight: 400;
+  margin: 0 100px 30px 100px;
+}
+
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding: 0;
+  font-family: 'Marcellus', serif;
+}
+
+.timeline h3{
+  font-size: 40px;
+  font-family: 'Marcellus', serif;
+  transition: all 1.5s ease;
+  cursor: pointer;
+}
+
+.timeline-event p {
+  max-height: 0;        
+  opacity: 0;            
+  transform: translateY(-10px); 
+  overflow: hidden;       
+  margin-top: 0;
+  font-size: 20px;
+  font-family: 'Marcellus', serif;
+  line-height: 1.4;
+  transition: 
+    max-height 1s ease,
+    opacity 1s ease,
+    transform 1s ease,
+    margin-top 0.7s ease;
+}
+
+.timeline-event:hover p {
+  max-height: 500px;     
+  opacity: 1;           
+  transform: translateY(0); 
+  margin-top: 0px;
+}
+
+.timeline-event:hover h3 {
+  font-size: 38px;
+}
+
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 4px;
+  background-color: #000000;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -2px;
+}
+
+.timeline-event {
+  padding: 0px 0px;
+  position: relative;
+  width: 50%;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease-out;
+}
+
+.timeline-event.left {
+  right: 5%;
+  text-align: right;
+  position: relative;
+}
+
+.timeline-event.right {
+  left: 55%;
+}
+
+
+.timeline-event.right .content {
+  padding: 20px;
+  position: relative;
+  gap: 5px;
+}
+
+.timeline-event .content-actual{
+  padding: 20px;
+  position: relative;
+  transition: all 1s ease;
+  border-radius: 20px;
+}
+
+.timeline-event .content-actual.atualiza {
+  color:#b3ada2;
+  background-color: rgb(0, 0, 0);
+}
+
+
+.timeline-event.left .content::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  right: -10px;
+  border-width: 10px;
+
+}
+
+.timeline-event.right .content::after {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: -10px;
+}
+
+.timeline-event .content-actual::after {
+  content: '';
+  background-color: #ffad0a;
+  transform: scale(1.1);
+  box-shadow: 5px 5px 3px 0px;
+  position: absolute;
+  top: 50%; /* Ajuste conforme necessário */
+  left: 50%; /* Ajuste conforme necessário */
+  z-index: 10; /* Garante que o pseudo-elemento fique acima */
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 0.5s ease, transform 0.5s ease; /* Transição suave */
+}
+
+.timeline-event.active .content-actual::after {
+  opacity: 1;
+  transform: scale(1); /* Ajuste o efeito de animação */
+  transition-delay: 0.6s; /* Delays o efeito para ser mostrado após o resto da animação */
+}
+
+.timeline-event.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.lista-presentes {
+    margin-top: 200px;
+    margin-bottom: 200px;
+}
+
+.lista-presentes header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+.lista-presentes h2 {
+  font-size: 10.5rem;
+  font-family: 'Joliet', serif;
+  font-weight: 400;
+  margin: 0 100px 30px 100px;
+  justify-content: center;
+  text-align: center;
+}
+
+.conteudo-duas-colunas {
+  display: flex;
+  justify-content: center; /* mantém espaço entre colunas */
+  align-items: center;         /* alinha topo */
+  gap: 30px;                      /* distância entre colunas */
+  margin-top: 40px;
+}
+
+/* cada coluna pode ter flex-basis para largura */
+.conteudo-duas-colunas p {
+  flex: 0 0 300px;
+  font-size: 20px;
+  font-family: 'Marcellus', serif;
+  text-align: right;
+}
+
+.lista-botao {
+  display: block;
+  text-decoration: none;
+  text-align: center;
+  flex: 0 0 250px;           
+  font-family: 'Marcellus', serif;
+  font-size: 20px;
+  padding: 20px 40px;
+  background-color: #ffffff;
+  color: #000000;
+  border: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.lista-botao:hover {
+  transform: scale(1.05);
+  background-color: #333;
+  color: #b3ada2;
+  justify-content: center;
+  align-items: center;
+}
